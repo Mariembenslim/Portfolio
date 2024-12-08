@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script>
+      function submitQuiz() {
+        const correctAnswers = {
+            q1: "a",
+            q2: "b",
+            q4: "b",
+            q5: "b",
+            q6: "a",
+            q7: "a",
+            q8: "a",
+            q9: "a",
+            q10: "a",
+            q11: "a",
+            q12: "a",
+            q13: "a",
+            q14: "a",
+            q15: "a",
+        };
+        const form = document.getElementById("quizForm");
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        for (let question in correctAnswers) {
+          const userAnswer = form[question].value;
+          if (userAnswer === correctAnswers[question]) {
+            score++;
+          }
+        }
+        const resultElement = document.getElementById("quiz-result");
+        if (score === totalQuestions) {
+          resultElement.textContent = `🎉 Perfect score! You got ${score}/${totalQuestions}. You're a web development master!`;
+          resultElement.style.color = "#6c63ff";
+        } else if (score > totalQuestions / 2) {
+          resultElement.textContent = `👍 Great job! You scored ${score}/${totalQuestions}. Keep it up!`;
+          resultElement.style.color = "#f8a1d1";
+        } else {
+          resultElement.textContent = `😅 You scored ${score}/${totalQuestions}. Don't worry, keep practicing and you'll get there!`;
+          resultElement.style.color = "red";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <p>MARIEM BEN SLIM</p>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="accueil.html" class="nav-link">Home</a></li>
+          <li><a href="parcours.html" class="nav-link">Education</a></li>
+          <li><a href="experiences.html" class="nav-link">Experience</a></li>
+          <li><a href="competences.html" class="nav-link">Skills</a></li>
+          <li><a href="passions.html" class="nav-link">Passion</a></li>
+          <li><a href="projets.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="quiz">
+      <h2>Web Development Quiz</h2>
+      <p>
+        Show off your knowledge in HTML, CSS, and JavaScript! Complete the quiz
+        below:
+      </p>
+      <form id="quizForm">
+        <div class="question">
+            <p>1. What does HTML stand for?</p>
+            <input type="radio" name="q1" value="a"> Hyper Text Markup Language<br>
+            <input type="radio" name="q1" value="b"> Home Tool Markup Language<br>
+            <input type="radio" name="q1" value="c"> Hyperlinks and Text Markup Language<br>
+          </div>
+          <div class="question">
+            <p>2. Which tag is used to link a CSS file to an HTML document?</p>
+            <input type="radio" name="q2" value="a"> style<br>
+            <input type="radio" name="q2" value="b"> link<br>
+            <input type="radio" name="q2" value="c"> script<br>
+          </div>
+          <div class="question">
+            <p>3. What is the default value of the position property in CSS?</p>
+            <input type="radio" name="q4" value="a"> relative<br>
+            <input type="radio" name="q4" value="b"> static<br>
+            <input type="radio" name="q4" value="c"> absolute<br>
+          </div>
+          <div class="question">
+            <p>4. Which HTML tag is used to define an internal style sheet?</p>
+            <input type="radio" name="q5" value="a"> css<br>
+            <input type="radio" name="q5" value="b"> style<br>
+            <input type="radio" name="q5" value="c"> link<br>
+          </div>
+          <div class="question">
+            <p>5. Which property is used to change the background color in CSS?</p>
+            <input type="radio" name="q6" value="a"> background-color<br>
+            <input type="radio" name="q6" value="b"> color<br>
+            <input type="radio" name="q6" value="c"> bgcolor<br>
+          </div>
+          <div class="question">
+            <p>6. Which of the following is a correct way to declare a JavaScript variable?</p>
+            <input type="radio" name="q7" value="a"> var myVariable;<br>
+            <input type="radio" name="q7" value="b"> variable myVariable;<br>
+            <input type="radio" name="q7" value="c"> let myVariable:<br>
+          </div>
+          <div class="question">
+            <p>7. How do you add a comment in JavaScript?</p>
+            <input type="radio" name="q8" value="a"> // This is a comment<br>
+            <input type="radio" name="q8" value="b"> /* This is a comment */<br>
+            <input type="radio" name="q8" value="c"> < !-- This is a comment -- > <br>
+          </div>
+          <div class="question">
+            <p>8. Which of these CSS properties is used to change the font of an element?</p>
+            <input type="radio" name="q9" value="a"> font-family<br>
+            <input type="radio" name="q9" value="b"> font-style<br>
+            <input type="radio" name="q9" value="c"> font-weight<br>
+          </div>
+          <div class="question">
+            <p>9. Which HTML tag is used to define an unordered list?</p>
+            <input type="radio" name="q10" value="a"> ul<br>
+            <input type="radio" name="q10" value="b"> ol<br>
+            <input type="radio" name="q10" value="c"> li<br>
+          </div>
+          <div class="question">
+            <p>10. How do you center a div in CSS?</p>
+            <input type="radio" name="q11" value="a"> margin: 0 auto;<br>
+            <input type="radio" name="q11" value="b"> text-align: center;<br>
+            <input type="radio" name="q11" value="c"> display: block;<br>
+          </div>
+          <div class="question">
+            <p>11. Which of the following JavaScript functions is used to add an item to the end of an array?</p>
+            <input type="radio" name="q12" value="a"> push()<br>
+            <input type="radio" name="q12" value="b"> pop()<br>
+            <input type="radio" name="q12" value="c"> shift()<br>
+          </div>
+          <div class="question">
+            <p>12. What is the use of the z-index property in CSS?</p>
+            <input type="radio" name="q13" value="a"> It controls the order of stacking elements<br>
+            <input type="radio" name="q13" value="b"> It defines the color of elements<br>
+            <input type="radio" name="q13" value="c"> It adjusts the margin of elements<br>
+          </div>
+          <div class="question">
+            <p>13. Which JavaScript event is triggered when a user clicks on an HTML element?</p>
+            <input type="radio" name="q14" value="a"> onclick<br>
+            <input type="radio" name="q14" value="b"> onhover<br>
+            <input type="radio" name="q14" value="c"> onmouseover<br>
+          </div>
+          <div class="question">
+            <p>14. Which HTML tag is used to specify a navigation menu?</p>
+            <input type="radio" name="q15" value="a"> nav<br>
+            <input type="radio" name="q15" value="b"> menu<br>
+            <input type="radio" name="q15" value="c"> ul<br>
+          </div>
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+      </form>
+      <p id="quiz-result"></p>
+    </section>
+    <footer class="footer">
+      <p>© 2024 Mariem Ben Slim. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
