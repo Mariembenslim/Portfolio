@@ -196,8 +196,8 @@ button:hover {
 }
 
 
-/* Parcours Style */
-.parcours-container {
+/* Parcours/Experience Style */
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,7 +205,7 @@ button:hover {
   padding: 20px 0;
 }
 
-.parcours-container::before {
+.container::before {
   content: '';
   position: absolute;
   width: 4px;
@@ -213,7 +213,7 @@ button:hover {
   background: #e91e63;
 }
 
-.parcours-item {
+.item {
   display: flex;
   align-items: center;
   position: relative;
@@ -221,17 +221,17 @@ button:hover {
   margin: 20px 0;
 }
 
-.parcours-item:nth-child(odd) {
+.item:nth-child(odd) {
   align-self: flex-start;
   margin-left: 55%;
 }
 
-.parcours-item:nth-child(even) {
+.item:nth-child(even) {
   align-self: flex-end;
   margin-right: 55%;
 }
 
-.parcours-content {
+.content {
   background-color:bisque;
   padding: 20px;
   border-radius: 5px;
@@ -239,16 +239,16 @@ button:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.parcours-content h2 {
+.content h2 {
   color: #e91e63;
   margin: 0 0 5px;
 }
 
-.parcours-content h3 {
+.content h3 {
   margin: 0 0 5px;
 }
 
-.parcours-content h4 {
+.content h4 {
   color: #555;
   margin: 0 0 10px;
 }
